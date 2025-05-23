@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Calendar App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="calendar.html" class="navbar-brand">Calendar App</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="calendar.html" class="nav-link">Calendar</a>
+            </li>
+            <li class="nav-item" id="admin-nav">
+                <a href="users.html" class="nav-link">User Management</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" id="logout-link" class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <h1>User Management</h1>
+                <div>
+                    <button id="add-user-btn">Add User</button>
+                </div>
+            </div>
+            
+            <div id="users-list-container">
+                <ul class="user-list" id="users-list">
+                    <!-- Users will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="user-modal-title">Add User</h3>
+                <button class="close-button" id="close-user-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group" id="password-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="USER">User</option>
+                            <option value="MANAGER">Manager</option>
+                            <option value="ADMIN">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="active">Status</label>
+                        <select id="active" name="active">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="save-user-btn">Save User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth-check.js"></script>
+    <script src="js/users.js"></script>
+</body>
+</html> 
